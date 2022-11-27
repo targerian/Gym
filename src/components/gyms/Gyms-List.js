@@ -53,7 +53,7 @@ const ListGyms = () => {
             ),
           }}
         />
-        <Grid item sm={5}>
+        <Grid item sm={5} sx={{display:"flex", justifyContent:"end"}}>
           <Button size="large" variant="contained" color="primary">
             SWITCH TO MAP VIEW
           </Button>
