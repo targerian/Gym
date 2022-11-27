@@ -2,6 +2,7 @@ import { Avatar, Breadcrumbs, Button, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const GymHeader = ({ gymData }) => {
   return (
@@ -36,7 +37,7 @@ const GymHeader = ({ gymData }) => {
             }}
           >
             <Avatar
-              src={gymData?.logo_img_url}
+              src={gymData?.logo_img_url || "https://images-platform.99static.com/8QVhsq0xUI9KAGH6WZXUmnWohwI=/0x0:1574x1574/500x500/top/smart/99designs-contests-attachments/97/97489/attachment_97489210"}
               sx={{ width: 120, height: 120, backgroundColor: "white" }}
             />
             <Box
@@ -53,7 +54,7 @@ const GymHeader = ({ gymData }) => {
               </Typography>
               <Grid container sx={{ width: "100%" }}>
                 <Grid item sm={2}>
-                  icon
+                  <LocationOnIcon />
                 </Grid>
                 <Grid item sm={8}>
                   <Typography sx={{ maxWidth: "600px", mb: 2 }} variant="h6">

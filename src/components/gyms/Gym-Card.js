@@ -15,7 +15,7 @@ const GymCard = ({ cardDetails }) => {
             alignItems: "center",
           }}
         >
-          <img src={cardDetails?.logo_img_url} height={150} />
+          <img src={cardDetails?.logo_img_url || "https://images-platform.99static.com/8QVhsq0xUI9KAGH6WZXUmnWohwI=/0x0:1574x1574/500x500/top/smart/99designs-contests-attachments/97/97489/attachment_97489210"} height={150} />
           <Typography variant="h5" sx={{ fontWeight: "bolder", my: 1 }}>
             {cardDetails?.name}
           </Typography>
