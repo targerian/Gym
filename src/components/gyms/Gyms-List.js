@@ -53,7 +53,7 @@ const ListGyms = () => {
             ),
           }}
         />
-        <Grid item sm={5} sx={{display:"flex", justifyContent:"end"}}>
+        <Grid item sm={5} sx={{ display: "flex", justifyContent: "end" }}>
           <Button size="large" variant="contained" color="primary">
             SWITCH TO MAP VIEW
           </Button>
@@ -62,6 +62,7 @@ const ListGyms = () => {
       <GymsCardsContainer cardsArray={GymsListQUery?.data} />
       <Grid container justifyContent="center" sx={{ py: 2 }}>
         <Pagination
+        page={currentPage}
           onChange={(e, page) => {
             setCurrentPage(page);
           }}
