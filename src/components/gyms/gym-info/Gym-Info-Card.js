@@ -3,7 +3,7 @@ import React from "react";
 
 const GymInfoCard = ({ icon = "icon", title, desc = "" }) => {
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} sx={{ minHeight: "150px" }}>
       <Grid item sm={12}>
         <Grid container>
           <Grid item sm={2}>
