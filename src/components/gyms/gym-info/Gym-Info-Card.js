@@ -1,7 +1,8 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
+import SportsGymnasticsIcon from "@mui/icons-material/SportsGymnastics";
 
-const GymInfoCard = ({ icon = "icon", title, desc = "" }) => {
+const GymInfoCard = ({ icon = <SportsGymnasticsIcon />, title, desc = "" }) => {
   return (
     <Grid container spacing={3} sx={{ minHeight: "150px" }}>
       <Grid item sm={12}>

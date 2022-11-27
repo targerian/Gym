@@ -43,13 +43,19 @@ const GymInfoTab = ({ gymData }) => {
       <Divider />
       <Grid container spacing={4} sx={{ mt: 4 }}>
         <Grid item sm={4}>
-          <GymInfoCard title={`About ${gymData?.name?? "The Gym"}`} />
+          <GymInfoCard title={`About ${gymData?.name ?? "The Gym"}`} />
         </Grid>
       </Grid>
       <Divider />
       <Grid container spacing={4} sx={{ mt: 4 }}>
         <Grid item sm={4}>
           <GymInfoCard title="Facilities" />
+        </Grid>
+      </Grid>
+      <Divider />
+      <Grid container spacing={4} sx={{ mt: 4 }}>
+        <Grid item sm={4}>
+          <GymInfoCard title="Contact Us" />
         </Grid>
       </Grid>
     </>
