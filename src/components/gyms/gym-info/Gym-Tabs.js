@@ -42,7 +42,7 @@ const GymTabs = ({ gymData }) => {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Information" {...a11yProps(0)} />
+          <Tab label="Info" {...a11yProps(0)} />
           <Tab label="Classes" {...a11yProps(1)} />
         </Tabs>
       </Box>
@@ -50,7 +50,7 @@ const GymTabs = ({ gymData }) => {
         <GymInfoTab gymData={gymData} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        To Be Added
       </TabPanel>
     </Container>
   );
