@@ -3,6 +3,7 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 
 const GymHeader = ({ gymData }) => {
   return (
@@ -37,7 +38,10 @@ const GymHeader = ({ gymData }) => {
             }}
           >
             <Avatar
-              src={gymData?.logo_img_url || "https://images-platform.99static.com/8QVhsq0xUI9KAGH6WZXUmnWohwI=/0x0:1574x1574/500x500/top/smart/99designs-contests-attachments/97/97489/attachment_97489210"}
+              src={
+                gymData?.logo_img_url ||
+                "https://images-platform.99static.com/8QVhsq0xUI9KAGH6WZXUmnWohwI=/0x0:1574x1574/500x500/top/smart/99designs-contests-attachments/97/97489/attachment_97489210"
+              }
               sx={{ width: 120, height: 120, backgroundColor: "white" }}
             />
             <Box
@@ -62,7 +66,11 @@ const GymHeader = ({ gymData }) => {
                   </Typography>
                 </Grid>
               </Grid>
-              <Typography variant="h6">{Math.floor(+gymData?.rate)}</Typography>
+              <Typography variant="h6">
+                {[...Array(Math.floor(+gymData?.rate||1)).keys()]?.map((el) => (
+                  <StarBorderIcon />
+                ))}
+              </Typography>
               {/* noTime to create an array and map returning stars :(  */}
             </Box>
           </Box>
