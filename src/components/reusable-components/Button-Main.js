@@ -8,9 +8,11 @@ const ButtonMain = (props) => {
       variant="contained"
       sx={{
         backgroundColor: "#5614CF",
+        borderRadius: "10px",
         "&:hover": {
           color: "white",
           backgroundColor: "red",
+         
         },
       }}
     >
