@@ -79,7 +79,8 @@ const ListGyms = () => {
             sx={{
               width: "100px",
               height: "50px",
-              backgroundColor: "red",
+              background:
+                "linear-gradient(113deg,#f21d3c 28%,#f48b45 138%),linear-gradient(180deg,#020303,#020303)",
               color: "white",
               cursor: "pointer",
               display: "flex",
@@ -90,6 +91,7 @@ const ListGyms = () => {
               padding: "0 10px",
               "&:hover": {
                 color: "white",
+                background: "none",
                 backgroundColor: "#5614CF",
               },
             }}
