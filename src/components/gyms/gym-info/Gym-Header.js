@@ -64,7 +64,7 @@ const GymHeader = ({ gymData }) => {
                   <LocationOnIcon />
                 </Grid>
                 <Grid item sm={8}>
-                  <Typography sx={{ maxWidth: "600px", mb: 2 }} variant="h6">
+                  <Typography sx={{ maxWidth: "600px", mb: 2, ml:2 }} variant="h6">
                     {gymData?.district}
                   </Typography>
                 </Grid>
