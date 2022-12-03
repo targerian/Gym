@@ -73,7 +73,7 @@ const ListGyms = () => {
               cursor: "pointer",
             }}
           >
-            filter
+            Filter
           </span>
           <Box
             sx={{
