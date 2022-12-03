@@ -20,9 +20,10 @@ const GymInfo = () => {
           },
         }
       );
-
-      const responseJson = await response.json();
-      return responseJson.data;
+      if (response.ok) {
+        const responseJson = await response.json();
+        return responseJson.data;
+      }
     },
     {
       keepPreviousData: true,
@@ -35,7 +36,7 @@ const GymInfo = () => {
   return (
     <>
       <GymHeader gymData={SingleGymQuery?.data} />
-      <GymTabs gymData={SingleGymQuery?.data}/>
+      <GymTabs gymData={SingleGymQuery?.data} />
     </>
   );
 };

@@ -4,11 +4,13 @@ import {
   InputAdornment,
   LinearProgress,
   Pagination,
+  Paper,
   TextField,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, spacing } from "@mui/system";
 import React, { useState } from "react";
 import { useQuery } from "react-query";
+import ButtonMain from "../reusable-components/Button-Main";
 import GymsCardsContainer from "./Gyms-Cards-Container";
 
 const ListGyms = () => {
@@ -44,25 +46,65 @@ const ListGyms = () => {
   return (
     <>
       <Grid container spacing={3} justifyContent="space-between" sx={{ py: 4 }}>
-        <TextField
-          sx={{ width: "25%" }}
-          placeholder="Serach by gym name,facilities"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">filter</InputAdornment>
-            ),
+        <Box
+          sx={{
+            width: "30%",
+            display: "flex",
+            justifyContent: "start",
+            position: "relative",
           }}
-        />
+        >
+          <input
+            style={{
+              width: "100%",
+              borderTopLeftRadius: "10px",
+              borderBottomLeftRadius: "10px",
+            }}
+            type="text"
+            placeholder="Search by gym name, facility"
+          />
+          <span
+            style={{
+              position: "absolute",
+              top: "24%",
+              right: "25%",
+              fontWeight: "bold",
+              color: "blue",
+              cursor: "pointer",
+            }}
+          >
+            filter
+          </span>
+          <Box
+            sx={{
+              width: "100px",
+              height: "50px",
+              backgroundColor: "red",
+              color: "white",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderTopRightRadius: "10px",
+              borderBottomRightRadius: "10px",
+              padding: "0 10px",
+              "&:hover": {
+                color: "white",
+                backgroundColor: "#5614CF",
+              },
+            }}
+          >
+            Find Gyms
+          </Box>
+        </Box>
         <Grid item sm={5} sx={{ display: "flex", justifyContent: "end" }}>
-          <Button size="large" variant="contained" color="primary">
-            SWITCH TO MAP VIEW
-          </Button>
+          <ButtonMain> SWITCH TO MAP VIEW</ButtonMain>
         </Grid>
       </Grid>
       <GymsCardsContainer cardsArray={GymsListQUery?.data} />
       <Grid container justifyContent="center" sx={{ py: 2 }}>
         <Pagination
-        page={currentPage}
+          page={currentPage}
           onChange={(e, page) => {
             setCurrentPage(page);
           }}
