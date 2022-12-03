@@ -24,5 +24,8 @@ input {
 }
 input:focus {
   border: none;
-  outline:none
+  outline: none;
+}
+a {
+  text-decoration: none !important;
 }

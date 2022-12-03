@@ -10,12 +10,14 @@ const GymHeader = ({ gymData }) => {
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "purple",
+        background:
+          "linear-gradient(to top, rgb(147, 28, 255), rgb(86, 20, 207) 55%)",
         height: "300px",
         color: "white",
+        py: 3,
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Breadcrumbs aria-label="breadcrumb">
           <Link
             underline="hover"
@@ -50,10 +52,11 @@ const GymHeader = ({ gymData }) => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                ml: 3,
+                ml: 4,
+                pl: 2,
               }}
             >
-              <Typography variant="h3" sx={{ mb: 2 }}>
+              <Typography variant="h4" sx={{ mb: 2 }}>
                 {gymData?.name}
               </Typography>
               <Grid container sx={{ width: "100%" }}>
@@ -62,16 +65,31 @@ const GymHeader = ({ gymData }) => {
                 </Grid>
                 <Grid item sm={8}>
                   <Typography sx={{ maxWidth: "600px", mb: 2 }} variant="h6">
-                    {gymData?.address}
+                    {gymData?.district}
                   </Typography>
                 </Grid>
               </Grid>
-              <Typography variant="h6">
-                {[...Array(Math.floor(+gymData?.rate||1)).keys()]?.map((el) => (
-                  <StarBorderIcon />
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  jsutiyContent: "start",
+                }}
+              >
+                {[...Array(Math.floor(+gymData?.rate || 1)).keys()]?.map(
+                  (el) => (
+                    <StarBorderIcon variant="filled" sx={{ color: "orange" }} />
+                  )
+                )}
+                {[
+                  ...Array(
+                    Math.floor(5 - Math.floor(+gymData?.rate || 1))
+                  ).keys(),
+                ]?.map((el) => (
+                  <StarBorderIcon variant="filled" />
                 ))}
-              </Typography>
-              {/* noTime to create an array and map returning stars :(  */}
+              </Grid>
             </Box>
           </Box>
           <Button
